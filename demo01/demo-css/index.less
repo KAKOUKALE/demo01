@@ -1,0 +1,884 @@
+@import 'mixins/clear.less';
+
+// 最外层包裹元素
+#wrapper {
+    position: relative;
+
+    // 头部
+    #header {
+
+        // 上面部分
+        .headerTop {
+            background-color: #eaeaea;
+            height: 30px;
+
+            // 版心元素
+            .headerTopMain {
+                width: 1200px;
+                margin: 0 auto;
+                line-height: 30px;
+                .clearfix();
+
+                // 左侧
+                .left {
+                    h5 {
+                        float: left;
+                        margin-right: 5px;
+                    }
+
+                    p {
+                        float: left;
+
+                        a {
+                            &:first-child {
+                                border-right: 1px solid #b3aeae;
+                                padding-right: 5px;
+                            }
+                        }
+                    }
+                }
+
+                // 右侧
+                .right {
+                    float: right;
+
+                    nav {
+                        font-size: 0px;
+
+                        a {
+                            margin-left: 10px;
+                            padding-right: 10px;
+                            border-right: 1px solid #b3aeae;
+                            font-size: 12px;
+
+                            &:last-child {
+                                border-right: none;
+                                padding-right: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 下面部分
+        #headBottom {
+
+            // 版心元素
+            .headBottomMain {
+                width: 1200px;
+                margin: 0 auto;
+                .clearfix();
+
+                // logo
+                .logo {
+                    float: left;
+
+                    a {
+                        img {
+                            width: 175px;
+                            height: 56px;
+                            margin: 25px 45px;
+                        }
+                    }
+                }
+
+                // 搜索框
+                .search {
+                    margin-top: 35px;
+                    float: right;
+
+                    input {
+                        &:first-child {
+                            box-sizing: border-box;
+                            width: 490px;
+                            height: 32px;
+                            padding: 0px 4px;
+                            border: 3px solid #ea4a36;
+                            float: left;
+
+                            &::placeholder {
+                                color: yellowgreen;
+                            }
+                        }
+
+                        &:last-child {
+                            width: 68px;
+                            height: 32px;
+                            background-color: #ea4a36;
+                            color: #fff;
+                            float: left;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 头部结束
+
+    // 分类导航开始
+    #navWrap {
+        border-bottom: 2px solid #e1251b;
+        .clearfix();
+
+        // 版心元素
+        .navWrapMain {
+            width: 1200px;
+            margin: 0 auto;
+
+            a {
+                float: left;
+                margin: 0px 22px;
+                font-size: 16px;
+                line-height: 50px;
+                text-align: center;
+                color: #333;
+
+                &:first-child {
+                    width: 210px;
+                    height: 50px;
+                    background-color: #e1251b;
+                    font-size: 14px;
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    // 分类导航结束
+
+    // 内容区域开始
+    #content {
+        margin-top: 15px;
+
+        // 版心元素
+        .contentMain {
+            width: 1200px;
+            margin: 0 auto;
+
+            // 路径导航
+            .navPath {
+                padding: 9px 15px 9px 0px;
+                font-size: 0px;
+
+                a {
+                    font-size: 12px;
+                }
+
+                span {
+                    padding: 0px 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    // 内容区域结束
+
+    // 中间区域开始
+    #center {
+        margin: 5px auto 15px;
+        width: 1200px;
+        .clearfix();
+
+        // 左侧放大镜
+        .left {
+            width: 400px;
+            float: left;
+
+            // 上边
+            .leftTop {
+                width: 400px;
+                height: 400px;
+                position: relative;
+                border: 1px solid #dfdfdf;
+
+                // 小图框
+                .smallPic {
+                    position: relative;
+
+                    // 小图片
+                    img {}
+
+                    // 蒙版元素
+                    .mask {
+                        width: 200px;
+                        height: 200px;
+                        position: absolute;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        border: 1px solid #ddd;
+                    }
+                }
+
+                // 大图框
+                .bigPic {
+                    width: 400px;
+                    height: 400px;
+                    position: absolute;
+                    left: 420px;
+                    top: 0px;
+                    border: 1px solid #ddd;
+                    overflow: hidden;
+
+                    img {
+                        width: 800px;
+                        height: 800px;
+                        position: absolute;
+                        left: 0px;
+                        top: 0px;
+                    }
+                }
+            }
+
+            // 下边
+            .leftBottom {
+                width: 400px;
+                margin-top: 5px;
+                .clearfix();
+
+                a {
+                    display: block;
+                    width: 10px;
+                    height: 54px;
+                    float: left;
+                    border: 1px solid #ccc;
+                    background-color: #ebebeb;
+                    text-align: center;
+                    line-height: 54px;
+
+                    &:first-child {
+                        margin-right: 4px;
+                    }
+                }
+
+                .piclist {
+                    width: 372px;
+                    height: 56px;
+                    float: left;
+                    position: relative;
+                    overflow: hidden;
+
+                    ul {
+                        // 强制不换行
+                        white-space: nowrap;
+                        position: absolute;
+                        left: 0px;
+                        transition: 0.5s;
+                        font-size: 0px;
+
+                        li {
+                            width: 50px;
+                            height: 50px;
+                            border: 1px solid #ccc;
+                            padding: 2px;
+                            margin-right: 20px;
+                            display: inline-block;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 右侧商品详情区域开始
+        .right {
+            width: 700px;
+            float: right;
+
+            // 商品详情数据结构开始
+            .rightTop {
+                h3 {
+                    font-size: 14px;
+                    line-height: 21px;
+                    margin-top: 15px;
+                }
+
+                >p {
+                    margin-top: 15px;
+                    color: #e12228;
+                }
+
+                .priceWrap {
+                    margin-top: 10px;
+                    line-height: 28px;
+                    background-color: #fee9ec;
+                    padding: 7px;
+
+                    .priceTop {
+                        .clearfix();
+
+                        >span {
+                            margin-right: 15px;
+                            float: left;
+                        }
+
+                        .price {
+                            float: left;
+
+                            .clearfix();
+                            color: #cc1122;
+
+                            >span {
+                                font-size: 16px;
+                                float: left;
+                            }
+
+                            p {
+                                font-size: 24px;
+                                font-weight: bold;
+                                float: left;
+                            }
+
+                            i {
+                                font-size: 12px;
+                                float: left;
+                            }
+                        }
+
+                        >p {
+                            float: right;
+
+                            >span {}
+                        }
+                    }
+
+                    .priceBottom {
+                        .clearfix();
+
+                        >span {
+                            float: left;
+                            margin-right: 15px;
+                        }
+
+
+                        >p {
+                            width: 520px;
+                            line-height: 28px;
+                            float: left;
+                            color: #999;
+
+                            >span:first-child {
+                                background-color: #c81623;
+                                padding: 3px;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                .support {
+                    .clearfix();
+                    margin-top: 10px;
+                    line-height: 28px;
+
+                    >span {
+                        margin-right: 15px;
+                        float: left;
+                    }
+
+                    >p {
+                        float: left;
+                        color: #999;
+                    }
+                }
+
+                .address {
+                    width: 520px;
+                    margin-top: 10px;
+                    line-height: 28px;
+
+                    border-bottom: 1px solid #ededed;
+                    padding-bottom: 5px;
+                    .clearfix();
+
+                    >span {
+                        margin-right: 15px;
+                        float: left;
+                    }
+
+                    >p {
+                        float: left;
+                        color: #999;
+                    }
+                }
+            }
+
+            // 商品选择区域开始
+            .rightBottom {
+                margin-top: 10px;
+                line-height: 28px;
+
+                // 选择之后结果的区域
+                .choose {
+                    .clearfix();
+
+                    .mark {
+                        height: 30px;
+                        background-color: snow;
+                        border: 1px solid #ddd;
+                        padding: 0 20px;
+                        margin-right: 20px;
+                        text-align: center;
+                        line-height: 30px;
+                        float: left;
+
+                        a {
+                            color: red;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+
+                // 商品参数的选择区域
+                .chooseWrap {
+                    dl {
+                        margin-top: 13px;
+                        margin-bottom: 13px;
+                        .clearfix();
+
+                        dt {
+                            margin-right: 15px;
+                            float: left;
+                        }
+
+                        dd {
+                            margin-right: 5px;
+                            float: left;
+                            color: #666;
+                            line-height: 24px;
+                            padding: 2px 14px;
+                            border-top: 1px solid #eee;
+                            border-left: 1px solid #eee;
+                            border-bottom: 1px solid #bbb;
+                            border-right: 1px solid #bbb;
+
+                            &:first-of-type {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+
+                // 加入购物车区域
+                .addCart {
+                    .clearfix();
+
+                    .count {
+                        float: left;
+                        position: relative;
+                        width: 55px;
+                        margin-right: 15px;
+
+                        input {
+                            width: 38px;
+                            height: 37px;
+                            border: 1px solid #ddd;
+                            color: #555;
+                        }
+
+                        .add {
+                            width: 15px;
+                            height: 18px;
+                            text-align: center;
+                            line-height: 18px;
+                            background-color: #f1f1f1;
+                            border: 1px solid #ddd;
+                            color: #666;
+                            position: absolute;
+                            // float: right;
+                            right: 1px;
+                        }
+
+                        .reduce {
+                            width: 15px;
+                            height: 18px;
+                            text-align: center;
+                            line-height: 18px;
+                            background-color: #f1f1f1;
+                            border: 1px solid #ddd;
+                            color: #666;
+                            position: absolute;
+                            // float: right;
+                            right: 1px;
+                            top: 19px;
+                        }
+                    }
+
+                    button {
+                        padding-left: 25px;
+                        padding-right: 25px;
+                        height: 36px;
+                        font-size: 16px;
+                        text-align: center;
+                        line-height: 36px;
+                        background-color: #e1251b;
+                        color: #fff;
+                        border: none;
+                        float: left;
+                    }
+                }
+            }
+
+            // 商品选择区域结束
+        }
+
+        // 右侧商品详情区域结束
+    }
+
+    // 中间区域结束
+
+    // 商品详情中间部分开始
+    .goodsDetailWrap {
+        width: 1200px;
+        margin: 30px auto 0px;
+        .clearfix();
+
+        // 左侧的侧边栏
+        .leftAside {
+            width: 210px;
+            border: 1px solid #ccc;
+            float: left;
+
+            // 上边
+            .asideTop {
+                height: 44px;
+                .clearfix();
+
+                h4 {
+                    text-align: center;
+                    line-height: 40px;
+                    width: 105px;
+                    float: left;
+                    border-top: 3px solid #fff;
+                    border-bottom: 1px solid #ccc;
+
+                    &.active {
+                        border-top: 3px solid #e1251b;
+                        width: 105px;
+                        line-height: 40px;
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+            }
+
+            // 下边
+            .asideContent {
+                padding: 10px;
+
+                >div {
+                    display: none;
+
+                    &.active {
+                        display: block;
+
+                        .goodslist1 {
+                            .clearfix();
+
+                            li {
+                                width: 50%;
+                                border-bottom: 1px dashed #ededed;
+                                line-height: 28px;
+                                float: left;
+                            }
+                        }
+
+                        .goodslist2 {
+                            li {
+                                margin: 5px 0 15px;
+                                border-bottom: 1px solid #ededed;
+
+                                img {
+                                    width: 152px;
+                                }
+
+                                span {}
+
+                                p {
+                                    font-size: 16px;
+                                    color: #c81623;
+                                }
+
+                                .button {
+                                    margin-top: 5px;
+                                    margin-bottom: 5px;
+                                    text-align: center;
+
+                                    a {
+                                        border: 1px solid #8c8c8c;
+                                        color: #8c8c8c;
+                                        padding: 2px 14px;
+                                        line-height: 18px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        // 右边结构
+        .rightDetail {
+            width: 980px;
+            float: right;
+
+            // 选择搭配开始
+            .chooseBox {
+                border: 1px solid #ddd;
+                margin-bottom: 15px;
+
+                // 标题
+                h4 {
+                    border-bottom: 1px solid #ddd;
+                    background-color: #f1f1f1;
+                    color: #333;
+                    padding: 5px 0 5px 15px;
+                }
+
+                // 内容
+                .listWrap {
+                    height: 170px;
+                    padding-top: 10px;
+                    .clearfix();
+
+                    // 左边
+                    .left {
+                        width: 127px;
+                        height: 165px;
+                        float: left;
+                        text-align: center;
+                        position: relative;
+
+                        >img {
+                            width: 87px;
+                            margin: 0 auto;
+                        }
+
+                        >p {
+                            color: #c81623;
+                            font-size: 16px;
+                        }
+
+                        >i {
+                            position: absolute;
+                            top: 48px;
+                            right: -25px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    // 中间
+                    .middle {
+                        width: 668px;
+                        height: 165px;
+                        float: left;
+                        .clearfix();
+
+                        li {
+                            width: 127px;
+                            margin: 0 20px;
+                            float: left;
+                            text-align: center;
+
+                            >img {
+                                width: 120px;
+                                height: 130px;
+                            }
+
+                            >span {}
+
+                            .checkbox {
+                                >span {}
+                            }
+                        }
+                    }
+
+                    // 右边
+                    .right {
+                        border-left: 1px solid #ddd;
+                        width: 153px;
+                        height: 165px;
+                        padding-left: 20px;
+                        float: left;
+
+                        >div {
+                            margin: 10px auto;
+                        }
+
+                        >p {
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+
+                        >i {
+                            color: #b1191a;
+                            font-size: 16px;
+                            margin: 10px auto;
+                        }
+
+                        div {
+                            button {
+                                padding: 10px 25px;
+                                font-size: 16px;
+                                color: #fff;
+                                background-color: #e1251b;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 选项开开始
+            .bottomDetail {
+
+                // 菜单
+                .tabBtns {
+                    background-color: #ededed;
+                    height: 40px;
+                    line-height: 38px;
+                    .clearfix();
+
+                    li {
+                        background-color: #fff;
+                        border: 1px solid #ddd;
+                        float: left;
+                        ;
+                        padding-left: 11px;
+                        padding-right: 11px;
+                        margin-left: -1px;
+
+                        &.active {
+                            background-color: red;
+
+                            a {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                // 内容
+                .tabContents {
+                    div {
+                        display: none;
+
+                        &.active {
+                            display: block;
+                            padding-left: 20px;
+                            margin: 10px 0;
+
+                            ul {
+                                li {}
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 选项开结束
+        }
+    }
+
+    // 商品详情中间部分结束
+
+    // 右侧侧边栏开始
+    .rightAside {
+        width: 300px;
+        height: 100%;
+        background-color: #7a6e6e;
+        transition: 0.5s;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+
+        &.asideClose {
+            right: -294px;
+        }
+        &.asideOpen {
+            right: 0px;
+        }
+
+        // 按钮区域
+        .btns {
+            width: 35px;
+            height: 35px;
+            background-color: #7a6e6e;
+            background-size: 35px 35px;
+            border-radius: 3px 0 0 3px;
+            position: absolute;
+            left: -29px;
+
+            &.btnsClose {
+                background-image: url('../images/list.png');
+            }
+            &.btnsOpen {
+                background-image: url('../images/cross.png');
+            }
+        }
+
+        // 侧边栏内容区
+        .content {
+            width: 294px;
+            height: 100%;
+            position: absolute;
+            left: 6px;
+            background-color: bisque;
+            z-index: 50;
+        }
+
+        // 侧边栏导航区
+        .navlist {
+            position: absolute;
+            left: -29px;
+            top: 50%;
+            transform: translateY(-50%);
+            li {
+                width: 35px;
+                height: 35px;
+                list-style: none;
+                position: relative;
+                p {
+                    width: 35px;
+                    height: 35px;
+                    background-color: #7a6e6e;
+                    background-image: url('../images/toolbars.png');
+                    background-position: -87px -174px;
+                    transition: 0.5s;
+                }
+                i {
+                    position: absolute;
+                    top: 0px;
+                    width: 62px;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    left: 35px;
+                    transition: 0.5s;
+                    background-color: #7a6e6e;
+                }
+                &:hover {
+                    p {
+                        background-color: pink;
+                    }
+                    i {
+                        background-color: pink;
+                        left: -62px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    // 右侧侧边栏结束
+}
